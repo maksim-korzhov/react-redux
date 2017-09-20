@@ -4,7 +4,7 @@ const path = require('path'); // для работы с путями
 
 module.exports = {
     entry: {
-        first: './src/first/index.js',
+        index: './src/index.js',
     },
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -37,13 +37,10 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Project Demo',
-            // minify: {
-            //     collapseWhitespace: true
-            // },
+            title: 'Starter',
             hash: true,
-            chunks: ['first'],
-            template: './src/first/index.html'
+            chunks: ['index'],
+            template: './index.html'
         }),
         new ExtractTextPlugin({
             filename: "[name].css",
